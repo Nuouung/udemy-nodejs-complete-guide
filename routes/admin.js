@@ -1,5 +1,14 @@
 const express = require('express');
 
-const Router = express.Router();
+const router = express.Router();
 
-module.exports = Router;
+router.get('/add-product', (request, response) => {
+    response.send('<form action="/product" method="POST"><input type="text" name="title"><button type="submit">Add Product</button></form>');
+});
+
+router.post('/product', (request, response) => {
+    console.log(request.body);
+    response.redirect('/');
+})
+
+module.exports = router;
