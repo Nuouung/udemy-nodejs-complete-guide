@@ -11,7 +11,6 @@ module.exports.getAddProduct = (request, response, next) => {
 }
 
 module.exports.postAddProduct = (request, response) => {
-
     const product = new Product(request.body.title);
     product.save();
 
